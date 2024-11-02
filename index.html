@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ML con Tytus.js</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js para visualización -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Tytus.js -->
+    <script type="text/javascript" src="./libs/tytus.js"></script>
+    <!-- Javascript -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Proyecto 2 - Machine Learning con Tytus.js</h1>
+    
+        <!-- Selector de modelos de Machine Learning -->
+        <label>Selecciona el modelo:</label>
+        <select id="modelSelect">
+            <option value="regresionLineal">Regresión Lineal</option>
+            <option value="regresionPolinomial">Regresión Polinomial</option>
+            <option value="kmeans">K-Means</option>
+        </select>
+    
+        <!-- Carga de archivo CSV -->
+        <label for="fileInput">Selecciona el archivo CSV:</label>
+        <input type="file" id="fileInput" accept=".csv">
+    
+    
+        <!-- Botón para entrenar el modelo -->
+        <button id="trainButton">Entrenar Modelo</button>
+
+        <br> <!-- Salto de línea -->
+    
+        <div class="linea2">
+             <!-- Rango de valores X -->
+            <div id="div_rangex_regresion">
+                <!-- Rango de predicción -->
+                <label>Rango de valores (X) para predecir:</label>
+                <!-- Para ingresar rango del eje X para predecir -->
+                <input type="text" id="rangeInputX" value="0,1,2,3,4,5,6,7,8,9">
+            </div>
+            <div id="div_numclases_means" style="display: none;">
+                <!-- Número de clases o clusters -->
+                <label>Ingrese el número de clases o clústers:</label>
+                <!-- Para ingresar rango del eje X para predecir -->
+                <input type="text" id="numClustersK" value="4">
+            </div>
+            <!-- Botón para predecir -->
+            <button id="predictButton">Predecir Modelo</button>
+        </div>
+        
+        <div class="linea3">         
+            <!-- Botón para mostrar graficas -->
+            <button id="showGraphButton">Mostrar Gráficas</button>
+        </div>
+    
+        <!-- Contenedor de la gráfica -->
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        <div id="canvas_div" style="display: none;">
+            <canvas id="chart_kmeans_div"  width="600" height="600"></canvas>
+            <p id="datos_canvas"></p>
+        </div>
+    </div>
+
+</body>
+</html>
